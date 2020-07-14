@@ -5,11 +5,11 @@
 <form method="post" action="/landmarks">
   
   <lobel for="name">Name:</lobel><br>
-  <input type="text" name="figure[name]" id="figure_name"><br>
+  <input type="text" name="landmark[name]" id="landmark_name"><br>
   
   <label for="title">Titles</label><br>
   <% @titles.each do |title| %>
-  <%= title.name %> <input type="checkbox" name="figure[title_ids][]" value="<%= title.id %>" id="title_<%= title.id %>">
+  <%= title.name %> <input type="checkbox" name="landmark[title_ids][]" value="<%= title.id %>" id="title_<%= title.id %>">
   <% end %>
   <br>
   Create New Title:
