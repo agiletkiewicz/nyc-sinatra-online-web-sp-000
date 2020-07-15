@@ -8,6 +8,8 @@ class LandmarksController < ApplicationController
   end
   
   post '/landmarks' do 
+    
+    erb :'landmarks/index'
   end
   
   
