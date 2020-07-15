@@ -9,7 +9,10 @@ class LandmarksController < ApplicationController
   
   post '/landmarks' do 
     @landmark = Landmark.create(params[:landmark])
-    @landmark.title = Title.find_or_create_by(name: params[:title][:name])
+    if !params[:title][:name].empty?
+      @landmark.title = Title.find_or_create_by(name: params[:title][:name])
+      @landmark.save
+    end
     
     erb :'landmarks/index'
   end
